@@ -1,19 +1,19 @@
 package no3;
 
 public class Account {
-    // Instance variables
+    // Variabel instance dari kelas Account
     private String id;
     private String name;
     private int balance;
 
-    // Constructor with all parameters
+    // Constructur yang menerima semua parameter
     public Account(String id, String name, int balance) {
         this.id = id;
         this.name = name;
         this.balance = balance;
     }
 
-    // Constructor with default balance
+    // Constructor akan menggunakan nilai saldo default
     public Account(String id, String name) {
         this(id, name, 0); // Default balance is 0
     }
@@ -31,12 +31,12 @@ public class Account {
         return balance;
     }
 
-    // Method to credit (add) an amount to the balance
+    // Method untuk menambahkan saldo
     public void credit(int amount) {
         balance += amount;
     }
 
-    // Method to debit (subtract) an amount from the balance
+    // Method untuk mengurangi saldo
     public void debit(int amount) {
         if (amount <= balance) {
             balance -= amount;
@@ -45,7 +45,7 @@ public class Account {
         }
     }
 
-    // Method to transfer an amount to another account
+    // Method untuk transfer saldo ke akun lain
     public void transferTo(Account another, int amount) {
         if (amount <= balance) {
             this.debit(amount);
@@ -55,37 +55,13 @@ public class Account {
         }
     }
 
-    // toString method to display account information
+    // Method toString untuk menampilkan informasi akun
     @Override
     public String toString() {
         return "Account[id=" + id + ", name=" + name + ", balance=" + balance + "]";
     }
 
-    // Main method to test the Account class
-    public static void main(String[] args) {
-        // Test constructor and toString()
-        Account a1 = new Account("A101", "Ligma", 88);
-        System.out.println(a1); // toString();
-        Account a2 = new Account("A102", "Deezma"); // default balance
-        System.out.println(a2);
 
-        // Test Getters
-        System.out.println("ID: " + a1.getID());
-        System.out.println("Name: " + a1.getName());
-        System.out.println("Balance: " + a1.getBalance());
 
-        // Test credit() and debit()
-        a1.credit(100);
-        System.out.println(a1);
-        a1.debit(50);
-        System.out.println(a1);
-        a1.debit(500); // debit() error
-        System.out.println(a1);
-
-        // Test transfer()
-        a1.transferTo(a2, 100);
-        System.out.println(a1);
-        System.out.println(a2);
-    }
 }
 
