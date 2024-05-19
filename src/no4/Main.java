@@ -1,6 +1,7 @@
 package no4;
 
-public class Main {
+import java.util.Scanner;
+
     public class Main {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
@@ -14,6 +15,7 @@ public class Main {
             System.out.println("5. Persamaan Gerak Parabola");
             System.out.println("6. Energi Kinetik");
 
+            System.out.print("Masukkan Perhitungan Yang Diinginkan (Masukkan Angka 1-6) : ");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -65,10 +67,26 @@ public class Main {
                     double kineticEnergy = calc.calculateKineticEnergy(massKE, velocity);
                     System.out.println("Energi kinetik: " + kineticEnergy + " Joule");
                     break;
+                case 7:
+                    System.out.print("Masukkan massa (kg): ");
+                    double massPE = scanner.nextDouble();
+                    System.out.print("Masukkan tinggi (m): ");
+                    double height = scanner.nextDouble();
+                    double potentialEnergy = calc.calculatePotentialEnergy(massPE, height);
+                    System.out.println("Energi potensial: " + potentialEnergy + " Joule");
+                    break;
+                case 8:
+                    System.out.print("Masukkan batas bawah a: ");
+                    double a = scanner.nextDouble();
+                    System.out.print("Masukkan batas atas b: ");
+                    double b = scanner.nextDouble();
+                    double integral = calc.calculateIntegral(a, b);
+                    System.out.println("Integral dari x^2 antara " + a + " dan " + b + " adalah: " + integral);
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid!");
             }
             scanner.close();
         }
     }
-}
+

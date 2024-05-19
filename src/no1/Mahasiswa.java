@@ -1,21 +1,24 @@
 package no1;
 
-//penggunaan class
+// Pendeklarasian Class
 class Mahasiswa {
+    // Private Variabel
     private String nama;
     private String kom;
     private String nim;
 
-    //penggunaan constructur
+    // Pendeklarasian Constructor
     public Mahasiswa(String nama, String kom, String nim){
         this.nama = nama;
         this.kom = kom;
         this.nim = nim;
     }
 
+    // Default Constructur (tanpa parameter)
     Mahasiswa() {
     }
 
+    //Method Getter dan Setter
     public void setNama(String nama){
         this.nama = nama;
     }
@@ -34,16 +37,6 @@ class Mahasiswa {
     public String getNim(){
         return nim;
     }
-
-
-    //Method Overriding
-//    @Override
-//    public String toString() {
-//        return "Mahasiswa{" +
-//                "nama='" + nama + '\'' +
-//                ", nim='" + nim + '\'' +
-//                '}';
-//    }
 
 
 }

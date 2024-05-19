@@ -1,7 +1,7 @@
 package no2;
 
-class PalindromCheck {
-    public boolean isPalindrom(String str) {
+public class PolindromCheck {
+    public boolean isPolindrom(String str) {
         // Menghapus spasi dan mengubah menjadi huruf kecil
         str = str.replaceAll("\\s+", "").toLowerCase();
 
@@ -18,4 +18,3 @@ class PalindromCheck {
         return true;
     }
 }
-

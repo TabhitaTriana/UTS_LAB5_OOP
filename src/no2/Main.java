@@ -14,9 +14,9 @@ public class Main {
         System.out.print("Masukkan string: ");
         String inputString = scanner.nextLine();
 
-        PalindromCheck palindromCheck = new PalindromCheck();
+        PolindromCheck polindromCheck = new PolindromCheck();
 
-        if (palindromCheck.isPalindrom(inputString)) {
+        if (polindromCheck.isPolindrom(inputString)) {
             System.out.println("String " + inputString + " adalah palindrom.");
         } else {
             System.out.println("String " + inputString + " bukan palindrom.");
